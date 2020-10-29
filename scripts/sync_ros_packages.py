@@ -122,6 +122,7 @@ for ubuntu_distro in distros:
         dtime = dtime.replace(microsecond=0)
         print("Difference between '%s' and '%s' computed at %s" %
               (target_url, upstream_url, dtime.isoformat('-')))
+        print(type(pf_old))
         announcement = diff_repos.compute_annoucement(options.rosdistro, pf_old, pf_new)
         print('-' * 80)
         print(announcement)

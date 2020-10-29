@@ -54,8 +54,10 @@ def get_packagefile_from_url(url, name='foo'):
     try:
         fromlines = urlopen(url)
         contents = fromlines.read()
-        if sys.version_info[0] == 3:
-            contents = contents.decode("utf-8")
+        print("contents")
+        print(type(contents))
+        #if sys.version_info[0] == 3:
+        #    contents = contents.decode("utf-8")
         return PackageFile(name, StringIO(contents))
     except URLError as ex:
         raise RuntimeError("Failed to load from url %s [%s]" % (url, ex))
